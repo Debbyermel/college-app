@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CollegeApp</title>
+    <title>College</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +11,8 @@
 
   <body>
     <%= render 'layouts/navigation' %>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
