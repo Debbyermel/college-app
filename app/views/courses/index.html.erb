@@ -4,40 +4,18 @@
   </div>
 </div>
 <div class="row">
-  <div class="col s6 m3">
-    <div class="card blue-grey darken-1">
-      <div class="card-content white-text">
-        <span class="card-title">CS 101</span>
-        <p>Nulla quis lorem ut libero malesuada feugiat. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui posuere blandit. Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      <div class="card-action">
-        <a href="#">Enroll</a>
-        <a href="#">Info</a>
-      </div>
-    </div>
-  </div>
-  <div class="col s6 m3">
-    <div class="card blue-grey darken-1">
-      <div class="card-content white-text">
-        <span class="card-title">CSS Animation</span>
-        <p>Nulla quis lorem ut libero malesuada feugiat. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui posuere blandit. Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      <div class="card-action">
-        <a href="#">Enroll</a>
-        <a href="#">Info</a>
+  <% @courses.each do |course| %>
+    <div class="col s6 m3">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title"><%= course.short_name %>: <%= course.name %></span>
+          <p><%= course.description %></p>
+        </div>
+        <div class="card-action">
+          <a href="#">Enroll</a>
+          <a href="#">Info</a>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col s6 m3">
-    <div class="card blue-grey darken-1">
-      <div class="card-content white-text">
-        <span class="card-title">Ruby 101</span>
-        <p>Nulla quis lorem ut libero malesuada feugiat. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui posuere blandit. Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      <div class="card-action">
-        <a href="#">Enroll</a>
-        <a href="#">Info</a>
-      </div>
-    </div>
-  </div>
+  <% end %>
 </div>
