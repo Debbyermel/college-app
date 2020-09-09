@@ -1,3 +1,12 @@
+<% if @student.errors.any? %>
+  <%= pluralize(@student.errors.count, 'error', 'errors') %>
+  <ul>
+    <% @student.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+</ul>
 <div class="container">
   <div class="row center signup-form">
     <div class="col s12 m12 l12">
@@ -12,7 +21,7 @@
                 <%= f.email_field :email, placeholder: 'Enter your email', autofocus: true %>
                 <div class="row">
                   <div class="input-field col s12">
-                    <%= f.submit 'Submit', class: 'btn orange waves-effect waves-light ' %>
+                    <%= f.submit 'Sign up', class: 'btn orange waves-effect waves-light ' %>
                   </div>
                 </div>
               </div>
