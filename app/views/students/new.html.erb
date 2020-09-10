@@ -1,12 +1,22 @@
 <% if @student.errors.any? %>
-  <%= pluralize(@student.errors.count, 'error', 'errors') %>
-  <ul>
-    <% @student.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
+  <div class="container">
+    <div class="row signup-form">
+      <div class="col s12 m12 l12">
+        <div class="card-panel red lighten-2">
+          <span class="white-text">
+            <strong><%= pluralize(@student.errors.count, 'error', 'errors') %> listed.</strong>
+            <ul>
+              <% @student.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
-</ul>
+
 <div class="container">
   <div class="row center signup-form">
     <div class="col s12 m12 l12">

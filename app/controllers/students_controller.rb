@@ -11,12 +11,15 @@ class StudentsController < ApplicationController
   def create
      @student = Student.new(student_params)
      if @student.save
-      flash[:success] = 'You are in!!'
+      flash[:notice] = 'You are in!!'
       redirect_to root_path
      else
       render 'new'
-      flash[:notice] = 'You are in!!'
      end
+  end
+
+  def show
+    @student = Student.find(params[:id])
   end
 
   private
