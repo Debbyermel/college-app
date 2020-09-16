@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'login', to: 'login#new'
   post 'login', to: 'login#create'
   delete 'logout', to: 'login#destroy'
+  post 'course_enroll', to: 'student_courses#create'
 
   resources :students, except: [:destroy]
 end

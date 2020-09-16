@@ -1,9 +1,9 @@
 <header>
   <ul id="dropdown1" class="dropdown-content">
     <li><%= session_link %></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">three</a></li>
+    <% if logged_in? %>
+      <li><%= link_to 'Profile', student_path(current_user) %></li>
+    <% end%>
   </ul>
   <nav>
     <div class="nav-wrapper">
@@ -21,6 +21,9 @@
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "About", about_path %></li>
         <li><%= link_to "New Courses", courses_new_path %></li>
+        <% if logged_in? %>
+          <li><%= link_to 'Profile', student_path(current_user) %></li>
+        <% end%>
       </ul>
     </div>
   </nav>
