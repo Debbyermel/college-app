@@ -6,18 +6,28 @@
 <div class="row">
   <% @courses.each do |course| %>
     <div class="col s6 m3">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title"><%= course.short_name %>: <%= course.name %></span>
-          <p><%= course.description %></p>
-        </div>
-        <div class="card-action">
-          <% if logged_in? && !(current_user.courses.include?(course)) %>
-            <%= link_to 'Enroll', course_enroll_path(course_id: course.id), method: :post %>
-          <% end %>
-          <a href="#">Info</a>
-        </div>
-      </div>
+      <div class="courses-container">
+	      <div class="course">
+		      <div class="course-preview">
+            <h6>Course</h6>
+            <h2><%= course.short_name %>: <%= course.name %></span></h2>
+            <% if logged_in? && !(current_user.courses.include?(course)) %>
+              <%= link_to 'Enroll', course_enroll_path(course_id: course.id), method: :post %>
+            <% end %>
+          </div>
+		<div class="course-info">
+			<div class="progress-container">
+				<div class="progress"></div>
+				<span class="progress-text">
+					6/9 Challenges
+				</span>
+			</div>
+			<h6>Chapter 4</h6>
+			<h4><%= course.short_name %>: <%= course.name %></span></h4>
+			<button class="btn">Continue</button>
     </div>
   <% end %>
+  </div>
 </div>
+
+
